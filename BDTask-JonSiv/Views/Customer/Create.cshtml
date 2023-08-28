@@ -9,7 +9,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form id="createForm" asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group">
@@ -36,6 +36,12 @@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
+
+            <!--confirmation box hidden by default-->
+            <div id="confirmationMessage" style="color: red; display: none;">
+                Customer added successfully
+            </div>
+
         </form>
     </div>
 </div>
@@ -47,3 +53,22 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+<!--confirmation message Javascript-->
+<script>
+    var form = document.getElementById("createForm");
+    var confirmationMessage = document.getElementById("confirmationMessage");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); //prevent the default form submission
+
+        //shows the confirmation message
+        //then call the submit function after 1 sec
+        confirmationMessage.style.display = "block";
+
+        setTimeout(function () {
+            form.submit();
+        }, 1000);
+
+    });
+</script>
