@@ -38,7 +38,7 @@ Here are the project's features:
 
 <p>There is a GET method to fetch the Create customer page, a GET method to get the list of customers, and a POST method to create a new customer</p>
 
-<p>Customers and Orders are stocked in memory using Lists</p>
+<p>Customers and Orders are stored in memory using Lists</p>
 
 <p>I have used a ViewModel to combine customers and ordercount</p>
 
