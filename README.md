@@ -5,7 +5,7 @@
 
 <h2>Database Diagram:</h2>
 
-<img src="https://i.ibb.co/VCWnYSG/sql-database-diagram.png" alt="db-diagram" width="1080px" height="400/">
+<img src="https://i.ibb.co/VCWnYSG/sql-database-diagram.png" alt="db-diagram">
 
   
   
