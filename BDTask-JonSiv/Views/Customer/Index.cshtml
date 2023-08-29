@@ -1,9 +1,9 @@
-﻿@model List<BDTask_JonSiv.Models.DB.Customer>
+﻿@model List<BDTask_JonSiv.ViewModels.CustomerOrdersViewModel>
 
 @{
     ViewData["Title"] = "Index - Customer List";
     //sort customer list by latest registered first(date or time)
-    Model.Sort((c1,c2) => c2.DateRegistered.CompareTo(c1.DateRegistered));
+    Model.Sort((c1,c2) => c2.Customer.DateRegistered.CompareTo(c1.Customer.DateRegistered));
 }
 
 <h1>Customer List</h1>
@@ -32,30 +32,33 @@
             <th>
                 DateRegistered
             </th>
-            <th></th>
+            <th>Order Count</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Id)
+                @Html.DisplayFor(modelItem => item.Customer.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
+                @Html.DisplayFor(modelItem => item.Customer.FirstName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LastName)
+                @Html.DisplayFor(modelItem => item.Customer.LastName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Address)
+                @Html.DisplayFor(modelItem => item.Customer.Address)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Phone)
+                @Html.DisplayFor(modelItem => item.Customer.Phone)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DateRegistered)
+                @Html.DisplayFor(modelItem => item.Customer.DateRegistered)
             </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.OrderCount)
+             </td>
         </tr>
 }
     </tbody>
