@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Index - Customer List";
+    //sort customer list by latest registered first(date or time)
+    Model.Sort((c1,c2) => c2.DateRegistered.CompareTo(c1.DateRegistered));
 }
 
 <h1>Customer List</h1>
